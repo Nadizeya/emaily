@@ -11,18 +11,22 @@
     "start": "node index.js",
     "server": "nodemon index.js",
     "client": "npm run start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.20.2",
     "concurrently": "^8.0.1",
     "cookie-session": "^2.0.0",
     "express": "^4.18.2",
     "express-session": "^1.17.3",
+    "install": "^0.13.0",
     "mongoose": "^7.0.3",
     "nodemon": "^2.0.22",
     "passport": "^0.5.3",
-    "passport-google-oauth20": "^2.0.0"
+    "passport-google-oauth20": "^2.0.0",
+    "stripe": "^12.10.0"
   }
 }
